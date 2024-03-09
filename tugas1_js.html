@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>TUGAS 1 JS</title>
+</head>
+<h1 align="center">
+    Data Pegawai
+</h1>
+
+<body>
+    <table border="1" align="center" cellpadding="10" cellspacing="0" widht="50%">
+        <thead>
+            <tr>
+                <th bgcolor="grey">Nama Pegawai</th>
+                <th bgcolor="grey">Jabatan</th>
+                <th bgcolor="grey">Status</th>
+                <th bgcolor="grey">Gaji Pokok</th>
+                <th bgcolor="grey"> Tunjangan Jabatan</th>
+                <th bgcolor="grey">BPJS</th>
+                <th bgcolor="grey">Tunjangan Keluarga</th>
+                <th bgcolor="grey">Total Gaji</th>
+            </tr>
+        </thead>
+
+        <tfoot>
+            <tr>
+                <th bgcolor="orange" colspan="7">Total Gaji</th>
+                <th id="totalGaji" bgcolor="orange" colspan="7"></th>
+            </tr>
+        </tfoot>
+
+    <script>
+    // Diketahui data pegawai
+    var pegawai = {
+        nama: 'Ridwan',
+        jabatan: 'manager',
+        status: 'menikah'
+    };
+
+    // Menghitung gaji pokok sesuai jabatan
+    var gajiPokok = {
+        manager: 15000000,
+        'asisten manager': 10000000,
+        staff: 5000000
+    };
+
+    // Menghitung tunjangan jabatan
+    var tunjanganJabatan = gajiPokok[pegawai.jabatan] * 0.15;
+
+    // Menghitung BPJS
+    var bpjs = gajiPokok[pegawai.jabatan] * 0.10;
+
+    // Menghitung tunjangan keluarga (ternary)
+    var tunjanganKeluarga = pegawai.status === 'menikah' ? gajiPokok[pegawai.jabatan] * 0.20 : 0;
+
+    // Menghitung total gaji
+    var totalGaji = gajiPokok[pegawai.jabatan] + tunjanganJabatan + bpjs + tunjanganKeluarga;
+
+    // Tampilan Output
+    document.write(`<td>${pegawai.nama}</td>`);
+    document.write(`<td>${pegawai.jabatan}</td>`);
+    document.write(`<td>${pegawai.status}</td>`);
+    document.write(`<td>${gajiPokok[pegawai.jabatan]}</td>`);
+    document.write(`<td>${tunjanganJabatan}</td>`);
+    document.write(`<td>${bpjs}</td>`);
+    document.write(`<td>${tunjanganKeluarga}</td>`);
+    document.write(`<td>${totalGaji}</td>`);
+    document.getElementById('totalGaji').innerText = totalGaji;
+    </script>
+</body>
+</html>
