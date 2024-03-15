@@ -7,25 +7,15 @@
     function dataPerson(){
         // Mendapatkan nilai dari isian nama, pekerjaan, dan hobby
         let forms = document.getElementById('frm');
-        let nama = forms.nama.value;
-        let pekerjaan = forms.pekerjaan.value;
-        let hobby = forms.hobby.value;
+        let nama = document.getElementById("frm").nama.value;
+        let pekerjaan = document.getElementById("frm").pekerjaan.value;
+        let hobby = document.getElementById("frm").hobby.value;
 
         // Jika inputan diisi atau tidak
-        if (nama.trim() === '' || pekerjaan.trim() === '' || hobby.trim() === '') {
-            let hasilElem = document.getElementById('hasil');
-            hasilElem.innerHTML = `<p>Maaf, Nama, Pekerjaan, dan Hobby Anda Belum Terisi</p>`;
-        } else {
+        let input = "Selamat Datang!" + "<br> Nama : "  + nama + "<br> Pekerjaan : " + pekerjaan + "<br> Hobby : " + hobby;
+        let no_input = "Maaf isi kolom terlebih dahulu";
+        let hasil = nama && pekerjaan && hobby != "" ? input : no_input;
+
         // Menampilkan hasil pada HTML
-        let hasilElem = document.getElementById('hasil');
-        hasilElem.innerHTML = `
-            <p>Nama: ${nama}</p>
-            <p>Pekerjaan: ${pekerjaan}</p>
-            <p>Hobby: ${hobby}</p>
-        `;
+         document.getElementById('hasil').innerHTML = hasil;
     }
-}
-    
-    // Memanggil fungsi dataPerson saat tombol "Submit" ditekan
-    let submitBtn = document.getElementById('submitBtn');
-    submitBtn.addEventListener('click', dataPerson);
