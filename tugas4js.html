@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
+    <title>Tugas 4 JS Eksternal</title>
+</head>
+<body>
+    <h2>Input Data Pegawai</h2>
+    <form id="pegawai">
+        <label for=""><br>Nama Pegawai :</label>
+        <input type="text" name="nama" id="">
+
+        <label for=""><br>Jabatan :</label>
+        <select name="jabatan" id=""></select>
+
+        <label for=""><br>Status :</label>
+        <select name="status" id=""></select><br>
+
+        <input type="button"  id="" value="Detail Data" onclick="tambahData()"> <br><br>
+    </form>
+
+    <h2>Daftar Pegawai</h2>
+    <table border="1" align="left" cellpadding="10" cellspacing="0" widht="50%" id="dataPegawai">
+        <thead>
+            <tr>
+                <th bgcolor="grey">Nama Pegawai</th>
+                <th bgcolor="grey">Jabatan</th>
+                <th bgcolor="grey">Status</th>
+                <th bgcolor="grey">Gaji Pokok</th>
+                <th bgcolor="grey">Tunjangan Jabatan</th>
+                <th bgcolor="grey">BPJS</th>
+                <th bgcolor="grey">Tunjangan Keluarga</th>
+                <th bgcolor="grey">Total Gaji</th>
+            </tr>
+        </thead>
+        <tbody id="dataBody"></tbody>
+        <tfoot id="totalGajii"></tfoot>
+    </table>
+
+    
+    <script src="js/pegawai.js"></script>
+</body>
+</html>
