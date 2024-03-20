@@ -1,0 +1,20 @@
+/* TUGAS 5 */
+/* Ketika mousenya digeser  daiatas gambar atau kotak maka hewannya bisa bersuara */
+body{
+    text-align: center;
+    margin: auto;
+    background-color: antiquewhite;
+}
+#div1, #div2, #div3{
+    display: inline-block;
+    margin: auto;
+    width: 80%;
+    color: orangered;
+    border: 3px solid orange;
+    padding: 10px;
+    text-align: center;
+    background: white;
+    height: 400px;
+    cursor: pointer;
+
+}
